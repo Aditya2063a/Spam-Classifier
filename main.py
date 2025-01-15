@@ -65,13 +65,13 @@ print()
 
 # Creating the TFIDF model
 tv = TfidfVectorizer(max_features=2500)
-X = tv.fit_transform(corpus).toarray()
+X1 = tv.fit_transform(corpus).toarray()
 
 
 # Train Test Split
 
-X_train1, X_test1, y_train1, y_test1 = train_test_split(X, y, test_size = 0.20, random_state = 0)
-spam_detect_model = MultinomialNB().fit(X_train, y_train)
+X_train1, X_test1, y_train1, y_test1 = train_test_split(X1, y, test_size = 0.20, random_state = 0)
+spam_detect_model = MultinomialNB().fit(X_train1, y_train1)
 
 
 #prediction
